@@ -56,12 +56,31 @@ class Subtraction(Examples):
     def __init__(self, secret_words, max_number, mathematical_operation):
         super().__init__(secret_words, max_number)
         self.mathematical_operation = mathematical_operation
+        self.examples = self.generate_examples()
+
+    def generate_examples(self):
+        temp = []
+        for x in self.result:
+            first_number = randint(0, x)
+            second_number = x + first_number
+            temp.append(f'{second_number} - {first_number} = ')
+        return temp
 
 class Addition(Examples):
 
     def __init__(self, secret_words, max_number, mathematical_operation):
         super().__init__(secret_words, max_number)
         self.mathematical_operation = mathematical_operation
+        self.examples = self.generate_examples()
+
+    def generate_examples(self):
+        temp = []
+        for x in self.result:
+            first_number = randint(0, x)
+            second_number = x - first_number
+            temp.append(f'{first_number} + {second_number} = ')
+        return temp
+
 
 class Multiplication(Examples):
 
@@ -90,5 +109,7 @@ class Mix(Examples):
 
 kus = Subtraction('asas', 100, '-')
 
-pprint(kus.CODE_DICT)
 print(kus.result)
+print(kus.morse_secret)
+
+print(kus.examples)
