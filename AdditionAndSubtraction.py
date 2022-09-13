@@ -53,9 +53,8 @@ class Examples():
 
 class Subtraction(Examples):
 
-    def __init__(self, secret_words, max_number, mathematical_operation):
+    def __init__(self, secret_words, max_number):
         super().__init__(secret_words, max_number)
-        self.mathematical_operation = mathematical_operation
         self.examples = self.generate_examples()
 
     def generate_examples(self):
@@ -68,9 +67,8 @@ class Subtraction(Examples):
 
 class Addition(Examples):
 
-    def __init__(self, secret_words, max_number, mathematical_operation):
+    def __init__(self, secret_words, max_number):
         super().__init__(secret_words, max_number)
-        self.mathematical_operation = mathematical_operation
         self.examples = self.generate_examples()
 
     def generate_examples(self):
@@ -82,34 +80,3 @@ class Addition(Examples):
         return temp
 
 
-class Multiplication(Examples):
-
-    def __init__(self, secret_words, max_number, mathematical_operation):
-        super().__init__(secret_words, max_number)
-        self.mathematical_operation = mathematical_operation
-
-class Division(Examples):
-
-    def __init__(self, secret_words, max_number, mathematical_operation):
-        super().__init__(secret_words, max_number)
-        self.mathematical_operation = mathematical_operation
-
-class Mix(Examples):
-
-    def __init__(self, secret_words, max_number, mathematical_operation):
-        super().__init__(secret_words, max_number)
-        self.mathematical_operation = mathematical_operation
-
-#test = Examples('Skakal pes',100)
-
-#print(test.result)
-#pprint(test.CODE_DICT)
-#print(test.result)
-
-
-kus = Subtraction('asas', 100, '-')
-
-print(kus.result)
-print(kus.morse_secret)
-
-print(kus.examples)
