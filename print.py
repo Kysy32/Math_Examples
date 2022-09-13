@@ -5,6 +5,13 @@ def introduction():
     print('')
 
 def user_choice(text, max_number, operation):
+    '''
+    Take user inputs
+    :param text:
+    :param max_number:
+    :param operation:
+    :return:
+    '''
     if max_number.isdigit():
         if operation == '-':
             user_choice = Subtraction(text, max_number)
@@ -27,13 +34,15 @@ def generate():
     operation = input('Insert the sign of the mathematical operation: ')
     gen_examples = user_choice(text, max_number, operation)
 
+
+    #test
     print(gen_examples.result)
     print(gen_examples.examples)
 
     for x in gen_examples.examples:
         print(x)
 
-
+#run the script
 if __name__ == "__main__":
     generate()
 
