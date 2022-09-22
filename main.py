@@ -31,7 +31,7 @@ def generate():
     introduction()
     text = input('Insert word or sentence which you want convert to morse code (use ony alphabet signs): ')
     max_number = input('Insert upper limit for generating examples: ')
-    operation = input('Insert the sign of the mathematical operation: ')
+    operation = input('Insert the sign of the mathematical operation (+, -): ')
     gen_examples = user_choice(text, max_number, operation)
 
 
@@ -40,6 +40,7 @@ def generate():
     print(gen_examples.examples)
     print(gen_examples.morse_secret)
     print(gen_examples.CODE_DICT)
+
 
     for x in gen_examples.examples:
         print(x)

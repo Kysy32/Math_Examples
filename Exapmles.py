@@ -1,4 +1,4 @@
-from random import randint
+from random import shuffle
 
 class Examples():
     MORSE_CODE_DICT = {'A': '.-', 'B': '-...',
@@ -14,16 +14,30 @@ class Examples():
     def __init__(self, secret_words, max_number):
         self.secret_words =[x for x in secret_words.upper()]
         self.morse_secret = self.secret()
-        self.CODE_DICT = {'A': randint(1, int(max_number)), 'B': randint(1, 101),
-                     'C': randint(1, int(max_number)), 'D': randint(1, int(max_number)), 'E': randint(1, int(max_number)),
-                     'F': randint(1, int(max_number)), 'G': randint(1, int(max_number)), 'H': randint(1, int(max_number)),
-                     'I': randint(1, int(max_number)), 'J': randint(1, int(max_number)), 'K': randint(1, int(max_number)),
-                     'L': randint(1, int(max_number)), 'M': randint(1, int(max_number)), 'N': randint(1, int(max_number)),
-                     'O': randint(1, int(max_number)), 'P': randint(1, int(max_number)), 'Q': randint(1, int(max_number)),
-                     'R': randint(1, int(max_number)), 'S': randint(1, int(max_number)), 'T': randint(1, int(max_number)),
-                     'U': randint(1, int(max_number)), 'V': randint(1, int(max_number)), 'W': randint(1, int(max_number)),
-                     'X': randint(1, int(max_number)), 'Y': randint(1, int(max_number)), 'Z': randint(1, int(max_number))}
+        self.choices = list(range(1, int(max_number) + 1))
+        self.shuffles()
+        self.CODE_DICT = {'A': self.choices.pop(), 'B': self.choices.pop(),
+                          'C': self.choices.pop(), 'D': self.choices.pop(),
+                          'E': self.choices.pop(),
+                          'F': self.choices.pop(), 'G': self.choices.pop(),
+                          'H': self.choices.pop(),
+                          'I': self.choices.pop(), 'J': self.choices.pop(),
+                          'K': self.choices.pop(),
+                          'L': self.choices.pop(), 'M': self.choices.pop(),
+                          'N': self.choices.pop(),
+                          'O': self.choices.pop(), 'P': self.choices.pop(),
+                          'Q': self.choices.pop(),
+                          'R': self.choices.pop(), 'S': self.choices.pop(),
+                          'T': self.choices.pop(),
+                          'U': self.choices.pop(), 'V': self.choices.pop(),
+                          'W': self.choices.pop(),
+                          'X': self.choices.pop(), 'Y': self.choices.pop(),
+                          'Z': self.choices.pop()}
         self.result = self.results()
+
+    def shuffles(self):
+        temp = (shuffle(self.choices))
+        return temp
 
     def secret(self):
         '''
