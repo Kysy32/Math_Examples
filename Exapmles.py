@@ -36,8 +36,10 @@ class Examples():
         self.result = self.results()
 
     def shuffles(self):
-        temp = (shuffle(self.choices))
-        return temp
+        '''
+        Shuffles the list of numbers
+        '''
+        shuffle(self.choices)
 
     def secret(self):
         '''
