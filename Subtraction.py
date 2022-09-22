@@ -12,7 +12,7 @@ class Subtraction(Examples):
     def generate_examples(self):
         temp = []
         for x in self.result:
-            first_number = randint(0, x)
+            first_number = randint(1, x)
             second_number = x + first_number
             temp.append(f'{second_number} - {first_number} = ')
         return temp

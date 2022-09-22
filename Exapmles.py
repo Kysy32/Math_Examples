@@ -1,15 +1,7 @@
 from random import shuffle
+from MorseCode import MORSE_CODE_DICT
 
 class Examples():
-    MORSE_CODE_DICT = {'A': '.-', 'B': '-...',
-                       'C': '-.-.', 'D': '-..', 'E': '.',
-                       'F': '..-.', 'G': '--.', 'H': '....',
-                       'I': '..', 'J': '.---', 'K': '-.-',
-                       'L': '.-..', 'M': '--', 'N': '-.',
-                       'O': '---', 'P': '.--.', 'Q': '--.-',
-                       'R': '.-.', 'S': '...', 'T': '-',
-                       'U': '..-', 'V': '...-', 'W': '.--',
-                       'X': '-..-', 'Y': '-.--', 'Z': '--..'}
 
     def __init__(self, secret_words, max_number):
         self.secret_words =[x for x in secret_words.upper()]
@@ -47,8 +39,8 @@ class Examples():
         '''
         temp = []
         for x in self.secret_words:
-            if x in Examples.MORSE_CODE_DICT:
-                temp.append(Examples.MORSE_CODE_DICT[x])
+            if x in MORSE_CODE_DICT:
+                temp.append(MORSE_CODE_DICT[x])
             elif x == ' ':
                 temp.append(x)
         return ' '.join(temp)
