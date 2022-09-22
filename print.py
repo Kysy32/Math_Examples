@@ -1,5 +1,5 @@
-from AdditionAndSubtraction import Addition, Subtraction
-from fpdf import FPDF
+from Addition import Addition
+from Subtraction import Subtraction
 
 def introduction():
     print('')
@@ -38,6 +38,8 @@ def generate():
     #test
     print(gen_examples.result)
     print(gen_examples.examples)
+    print(gen_examples.morse_secret)
+    print(gen_examples.CODE_DICT)
 
     for x in gen_examples.examples:
         print(x)
