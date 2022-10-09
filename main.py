@@ -2,6 +2,7 @@ from pprint import pprint
 
 from Addition import Addition
 from Subtraction import Subtraction
+from MultiplicationTable import MultiplicationTable
 
 def introduction():
     print('')
@@ -21,6 +22,9 @@ def user_choice(text, max_number, operation):
         elif operation == '+':
             user_choice = Addition(text, max_number)
             return user_choice
+        elif operation == '*':
+            user_choice = MultiplicationTable(text, max_number)
+            return user_choice
         else:
             print('If you want to generate examples for addition you have to use + as a sign, for subtraction you have to use -')
             quit()
@@ -32,8 +36,8 @@ def generate():
 
     introduction()
     text = input('Insert word or sentence which you want convert to morse code (use ony alphabet signs): ')
+    operation = input('Insert the sign of the mathematical operation (+, -, *): ')
     max_number = input('Insert upper limit for generating examples (min 40): ')
-    operation = input('Insert the sign of the mathematical operation (+, -): ')
     gen_examples = user_choice(text, max_number, operation)
 
 

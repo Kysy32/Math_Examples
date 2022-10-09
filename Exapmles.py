@@ -5,9 +5,9 @@ class Examples():
 
     def __init__(self, secret_words, max_number):
         self.secret_words =[x for x in secret_words.upper()]
+        self.max_number = max_number
         self.morse_secret = self.secret()
-        self.choices = list(range(1, int(max_number) + 1))
-        self.shuffles()
+        self.choices = self.choice()
         self.CODE_DICT = {'A': self.choices.pop(), 'B': self.choices.pop(),
                           'C': self.choices.pop(), 'D': self.choices.pop(),
                           'E': self.choices.pop(),
@@ -26,13 +26,6 @@ class Examples():
                           'X': self.choices.pop(), 'Y': self.choices.pop(),
                           'Z': self.choices.pop()}
         self.result = self.results()
-
-    def shuffles(self):
-        '''
-        Shuffles the list of numbers
-        '''
-        shuffle(self.choices)
-
     def secret(self):
         '''
         Converts input word/words to morse code
@@ -55,4 +48,28 @@ class Examples():
                 temp.append(self.CODE_DICT[x])
             elif x == ' ':
                 continue
+        return temp
+
+    def choice(self):
+        choices = list(range(1, int(self.max_number) + 1))
+        shuffle(choices)
+        temp = []
+        for x in choices:
+            if x % 2 == 0 and x <= 20:
+                temp.append(x)
+            elif x % 3 == 0 and x <= 30:
+                temp.append(x)
+            elif x % 4 == 0 and x <= 40:
+                temp.append(x)
+            elif x % 5 == 0 and x <= 50:
+                temp.append(x)
+            elif x % 6 == 0 and x <= 60:
+                temp.append(x)
+            elif x % 7 == 0 and x <= 70:
+                temp.append(x)
+            elif x % 8 == 0 and x <= 80:
+                temp.append(x)
+            elif x % 9 == 0 and x <= 90:
+                temp.append(x)
+
         return temp
