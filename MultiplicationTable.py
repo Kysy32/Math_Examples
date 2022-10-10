@@ -16,7 +16,9 @@ class MultiplicationTable(Examples):
                 first_number = randint(2, 10)
                 second_number = randint(1,10)
                 if first_number * second_number == x and first_number != second_number:
-                    temp.append(f'{first_number} * {second_number} = ')
+                    s = f'{first_number} * {second_number} = '
+                    if s not in temp:
+                        temp.append(s)
                     break
         return temp
 
