@@ -1,6 +1,7 @@
 from random import shuffle
 from MorseCode import MORSE_CODE_DICT
 
+
 class Examples():
 
     def __init__(self, secret_words, max_number):
@@ -51,7 +52,7 @@ class Examples():
         return temp
 
     def choice(self):
-        choices = list(range(1, int(self.max_number) + 1))
+        choices = list(range(12, int(self.max_number) + 1))
         shuffle(choices)
         temp = []
         for x in choices:
@@ -73,3 +74,4 @@ class Examples():
                 temp.append(x)
 
         return temp
+

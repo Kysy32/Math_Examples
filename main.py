@@ -36,8 +36,8 @@ def generate():
 
     introduction()
     text = input('Insert word or sentence which you want convert to morse code (use ony alphabet signs): ')
-    operation = input('Insert the sign of the mathematical operation (+, -, *): ')
-    max_number = input('Insert upper limit for generating examples (min 40): ')
+    operation = input('Insert the sign of the mathematical operation (+, -, * (multiplication table): ')
+    max_number = input('Insert upper limit for generating examples (min 100): ')
     gen_examples = user_choice(text, max_number, operation)
 
 

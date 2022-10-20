@@ -14,5 +14,6 @@ class Addition(Examples):
         for x in self.result:
             first_number = randint(1, x)
             second_number = x - first_number
-            temp.append(f'{first_number} + {second_number} = ')
+            if second_number != 0:
+                temp.append(f'{first_number} + {second_number} = ')
         return temp

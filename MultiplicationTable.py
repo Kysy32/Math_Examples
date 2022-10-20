@@ -15,10 +15,12 @@ class MultiplicationTable(Examples):
             while True:
                 first_number = randint(2, 10)
                 second_number = randint(1,10)
-                if first_number * second_number == x and first_number != second_number:
+                if first_number * second_number == x:
                     s = f'{first_number} * {second_number} = '
                     if s not in temp:
                         temp.append(s)
+                    elif s in temp:
+                        temp.append(f'{second_number} * {first_number} = ')
                     break
         return temp
 
